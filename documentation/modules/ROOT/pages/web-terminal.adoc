@@ -1,0 +1,65 @@
+= Web Terminal
+include::_attributes.adoc[]
+
+If you do not have or do not wish to install the various client tools for
+performing the exercises detailed in this workshop, you can deploy a
+web-based terminal container image into your OpenShift environment.
+
+[#prerequisites]
+== Prerequisites
+You will first need a Project where you can deploy the web terminal. Go to
+your OpenShift web console, login, and switch to the _Developer_ context.
+
+image::developer-context.png["Developer Context Switch",300]
+
+Next, click _Project:_ at the top of the page, and create a new Project. You
+can call it whatever you like, but the instructions will refer to a project
+called `Terminal`.
+
+image::create-project.png["Create a Project",300]
+
+[#deploy-terminal]
+== Deploy the Terminal
+Once you have created your `Terminal` Project, you can then click the _+Add_
+button.
+
+From the list of options, choose _Container Image_.
+
+Where it says _Enter an image name_, you will want to paste the URI for the
+TTYD image that we use to provide the terminal experience:
+
+[.console-input]
+[source,text]
+----
+quay.io/redhat-scholars/ttyd-openshift
+----
+
+You can accept all the defaults, and click _Create_ at the bottom of the
+page.
+
+[#access-terminal]
+== Accessing the Terminal
+Once you have deployed the terminal image, in the topology view you will see
+something that looks like this:
+
+image::terminal-topology.png["Terminal Topology View",300]
+
+Click on the little pop-out arrow at the top right of the circle, and this
+will open the web terminal.
+
+Back in the OpenShift web console, if you click your name in the upper right
+corner, you will see _Copy Login Command_. Click it, and you will be prompted
+for your username and password. Enter it, submit, and you will see _Display
+Token_.
+
+When you click _Display Token_, you will finally see an `oc login` command
+that looks something like the following:
+
+[source]
+----
+oc login --token=zzzz --server=https://api.cluster-domain.com:6443
+----
+
+Copy and paste the login command into the web terminal, and now you can
+access OpenShift with all of the tools you need to perform the exercises in
+this workshop!

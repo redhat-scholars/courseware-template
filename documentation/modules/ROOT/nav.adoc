@@ -5,3 +5,5 @@
 * xref:02-deploy.adoc[2. Deploy Service]
 ** xref:02-deploy.adoc#package[Build Service]
 ** xref:02-deploy.adoc#deploy[Deploy Dervice]
+
+* xref:web-terminal.adoc[Web Terminal]
