@@ -4,12 +4,12 @@ runtime:
 site:
   title: Template Tutorial
   url: https://redhat-scholars.github.io/course-template
+  start_page: template-tutorial::index.adoc
 
 content:
   sources:
     - url: ./
       start_path: documentation
-      start_page: template-tutorial::index.adoc
 
 asciidoc:
   attributes:
